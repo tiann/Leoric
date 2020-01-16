@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="me.weishu.leoric.demo">
+
+    <application
+        android:name="MainApplication"
+        android:label="Leoric"
+        android:supportsRtl="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name="MainActivity"
+            android:label="Leoric"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".Receiver1" android:process=":resident" />
+        <service android:name="Service1" android:process=":resident" />
+        <activity android:name=".Activity1" android:process=":resident" />
+
+        <receiver android:name="Receiver2" android:process="android.media" />
+        <activity android:name="Activity2" android:process="android.media" />
+        <service android:name="Service2" android:process="android.media" />
+    </application>
+
+</manifest>
