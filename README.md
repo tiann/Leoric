@@ -10,7 +10,8 @@ Leoric 是一个 Android 上的黑科技保活库，它可以对抗在任意 And
 
 ## 实现原理
 
-[史上最强Android保活思路：深入剖析腾讯TIM的进程永生技术](https://zhuanlan.zhihu.com/p/102675295)
+[Android 黑科技保活实现原理揭秘](http://weishu.me/2020/01/16/a-keep-alive-method-on-android/)
+[深度剖析App保活案例](http://gityuan.com/2018/02/24/process-keep-forever/)
 
 
 ## Contact me
@@ -25,7 +26,7 @@ Email: twsxtd@gmail.com
 ## License
 
 Copyright (C) 2015, Mars Kwok
-Copyright (C) 2020, weishu<twsxtd@gmail.com>
+Copyright (C) 2020, weishu
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
