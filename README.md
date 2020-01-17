@@ -4,6 +4,8 @@ Leoric 是一个 Android 上的黑科技保活库，它可以对抗在任意 And
 
 > Leoric 是 Dota 中的英雄"骷髅王"，本项目名取自骷髅王的大招「重生」。
 
+![Leoric](longlive.gif)
+
 ## 使用方法
 
 参见 demo 项目。
