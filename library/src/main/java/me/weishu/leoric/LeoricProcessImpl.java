@@ -165,17 +165,20 @@ public class LeoricProcessImpl implements ILeoricProcess {
                 return false;
             }
             int code;
-            int sdk = Build.VERSION.SDK_INT;
-            if (sdk == 28) {
-                code = 30;
-            } else if (sdk == 27) {
-                code = 26;
-            } else if (sdk == 26) {
-                code = 26;
-            } else if (sdk == 25) {
-                code = 34;
-            } else {
-                code = 34;
+            switch (Build.VERSION.SDK_INT) {
+                case 26:
+                case 27:
+                    code = 26;
+                    break;
+                case 28:
+                    code = 30;
+                    break;
+                case 29:
+                    code = 24;
+                    break;
+                default:
+                    code = 34;
+                    break;
             }
             //mRemote.transact(34, mServiceData, null, 0);//START_SERVICE_TRANSACTION = 34
 //            mRemote.transact(26, mServiceData, null, 1);//START_SERVICE_TRANSACTION = 34
