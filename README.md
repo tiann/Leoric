@@ -8,21 +8,25 @@ Leoric 是一个 Android 上的黑科技保活方法的 PoC，它可以对抗在
 
 ## 重现方法
 
-虽然理论上这个方法可以支持任意的 Android 版本，但本 PoC 仅仅在 Android 9.0上测试过。具体使用方式参见 demo 项目。
-
-## 应对方法
-
-保证在执行 `force-stop` 的时候，不要让被 `force-stop` 的那个进程有任何机会启动新的进程即可；下面是一种简单的方法杀死 Leoric:
-
-```
-ps -A | grep `ps -A | grep me.weishu.leoric | awk '{print $1}' | head -1` | awk '{print $2}' | xargs kill -19 && am force-stop me.weishu.leoric
-```
+虽然理论上这个方法可以支持任意的 Android 版本，但本 PoC 在 Android 9.0 及 Android 10 上测试过。具体使用方式参见 demo 项目。
 
 ## 实现原理
 
 - [Android 黑科技保活实现原理揭秘](http://weishu.me/2020/01/16/a-keep-alive-method-on-android/)
 - [深度剖析App保活案例](http://gityuan.com/2018/02/24/process-keep-forever/)
 
+## 应对方法
+
+下面是一种简单的方法杀死 Leoric:
+
+```
+ps -A | grep `ps -A | grep me.weishu.leoric | awk '{print $1}' | head -1` | awk '{print $2}' | xargs kill -19 && am force-stop me.weishu.leoric
+```
+
+对于系统有两种思路可以选择：
+
+1. 加入在 force-stop 期间不允许启动新的进程的逻辑
+2. 修改 force-stop 的杀进程逻辑为：预先收集好所有进程再进行 kill（如有必要还可以先发送 SIGSTOP）
 
 ## Contact me
 Email: twsxtd@gmail.com
