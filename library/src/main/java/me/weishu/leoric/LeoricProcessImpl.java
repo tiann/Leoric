@@ -142,7 +142,7 @@ public class LeoricProcessImpl implements ILeoricProcess {
             mServiceData.writeInt(1);
             intent.writeToParcel(mServiceData, 0);
             mServiceData.writeString(null);
-            mServiceData.writeInt(Build.VERSION.SDK_INT >= 29 ? 1 : 0);
+            mServiceData.writeInt(context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.O ? 1 : 0);
             mServiceData.writeString(context.getPackageName());
             mServiceData.writeInt(0);
         } else {
