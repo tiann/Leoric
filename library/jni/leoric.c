@@ -226,6 +226,7 @@ Java_me_weishu_leoric_NativeLeoric_doDaemon(JNIEnv *env, jobject jobj,
 
         do_daemon(env, jobj, indicator_self_path_child, indicator_daemon_path_child,
                   observer_self_path_child, observer_daemon_path_child);
+        return;
     }
 
     if (waitpid(pid, NULL, 0) != pid)
