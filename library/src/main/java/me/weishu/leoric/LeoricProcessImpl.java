@@ -151,7 +151,9 @@ public class LeoricProcessImpl implements ILeoricProcess {
             mServiceData.writeStrongBinder(null);
             intent.writeToParcel(mServiceData, 0);
             mServiceData.writeString(null);
-            mServiceData.writeString(context.getPackageName());
+            if (Build.VERSION.SDK_INT > 22) {//适配5.1(22)
+                mServiceData.writeString(context.getPackageName());
+            }
             mServiceData.writeInt(0);
         }
 
