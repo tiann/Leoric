@@ -178,6 +178,12 @@ public class LeoricProcessImpl implements ILeoricProcess {
                 case 29:
                     code = 24;
                     break;
+                case 30:
+                    code = 26;
+                    break;
+                case 31:
+                    code = 27;
+                    break;
                 default:
                     code = 34;
                     break;
