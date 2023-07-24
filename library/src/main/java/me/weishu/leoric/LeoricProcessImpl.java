@@ -68,8 +68,6 @@ public class LeoricProcessImpl implements ILeoricProcess {
                         new File(indicatorDir, OBSERVER_PERSISTENT_FILENAME).getAbsolutePath(),
                         new File(indicatorDir, OBSERVER_DAEMON_ASSISTANT_FILENAME).getAbsolutePath());
             }
-
-            ;
         };
         t.start();
 

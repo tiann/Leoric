@@ -6,6 +6,10 @@ Leoric 是一个 Android 上的黑科技保活方法的 PoC，它可以对抗在
 
 ![Leoric](longlive.gif)
 
+## 编译环境
+JDK 11 + NDK 19.2.5345600
+
+
 ## 重现方法
 
 虽然理论上这个方法可以支持任意的 Android 版本，但本 PoC 在 Android 9.0 及 Android 10 上测试过。具体使用方式参见 demo 项目。
