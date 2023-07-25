@@ -27,9 +27,8 @@ import android.os.Build;
 import android.os.IBinder;
 
 import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 
-public class Service2 extends Service{
+public class Service2 extends Service {
     private final static int NOTIFY_ID = 100;
     Notification notification;
     NotificationManager manager;
@@ -42,14 +41,15 @@ public class Service2 extends Service{
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         showNotification();
-        startForeground(NOTIFY_ID,notification);
+        startForeground(NOTIFY_ID, notification);
         return Service.START_NOT_STICKY;
     }
+
     private void showNotification() {
         manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         Intent hangIntent = new Intent(this, MainActivity.class);
 
-        PendingIntent hangPendingIntent = PendingIntent.getActivity(this, 1001, hangIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent hangPendingIntent = PendingIntent.getActivity(this, 1001, hangIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         String CHANNEL_ID = "your_custom_id";//应用频道Id唯一值， 长度若太长可能会被截断，
         String CHANNEL_NAME = "your_custom_name";//最长40个字符，太长会被截断

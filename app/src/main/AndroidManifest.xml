@@ -12,6 +12,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name="MainActivity"
+            android:exported="true"
             android:label="Leoric"
             android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
@@ -20,13 +21,31 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".Receiver1" android:process=":resident" />
-        <service android:name="Service1" android:process=":resident" />
-        <activity android:name=".Activity1" android:process=":resident" />
+        <receiver
+            android:name=".Receiver1"
+            android:exported="false"
+            android:process=":resident" />
+        <service
+            android:name="Service1"
+            android:exported="false"
+            android:process=":resident" />
+        <activity
+            android:name=".Activity1"
+            android:exported="false"
+            android:process=":resident" />
 
-        <receiver android:name="Receiver2" android:process="android.media" />
-        <activity android:name="Activity2" android:process="android.media" />
-        <service android:name="Service2" android:process="android.media" />
+        <receiver
+            android:name="Receiver2"
+            android:exported="false"
+            android:process="android.media" />
+        <activity
+            android:name="Activity2"
+            android:exported="false"
+            android:process="android.media" />
+        <service
+            android:name="Service2"
+            android:exported="false"
+            android:process="android.media" />
     </application>
 
 </manifest>
