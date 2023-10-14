@@ -32,6 +32,8 @@ ps -A | grep `ps -A | grep me.weishu.leoric | awk '{print $1}' | head -1` | awk 
 1. 加入在 force-stop 期间不允许启动新的进程的逻辑
 2. 修改 force-stop 的杀进程逻辑为：预先收集好所有进程再进行 kill（如有必要还可以先发送 SIGSTOP）
 
+在 Android 14 中，系统加入了[在强行停止前冻结应用全部 cgroup 的逻辑](https://android.googlesource.com/platform/frameworks/base/+/79825c6f2f8b46808e4b431fe52b3be78f1e8ac8)，本方案失效。
+
 ## Contact me
 Email: twsxtd@gmail.com
 
